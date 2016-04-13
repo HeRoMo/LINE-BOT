@@ -32,4 +32,9 @@ module LineBot
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
   end
+  module Channel
+    ID = Rails.application.secrets.line['id']
+    SECRET = Rails.application.secrets.line['secret']
+    MID = Rails.application.secrets.line['mid']
+  end
 end
