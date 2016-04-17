@@ -9,9 +9,7 @@ class CallbackController < ApplicationController
   def recieve
     data_list = params[:result]
     data_list.each do |data|
-      from = data['content']['from']
-      text = data['content']['text']
-      Message.new.post_text_message(from, text)
+      Bot.responce data
     end
     render status:200, text:'success'
   end
